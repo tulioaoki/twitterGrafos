@@ -41,6 +41,6 @@ twitter.getFollowersList(params, error, (res)=>{
     data = JSON.parse(res);
     users = data.users;
     users.forEach(element => {
-        console.log(element.name)
+        console.log(element.name+":"+element.screen_name)
     });
 });

@@ -1,18 +1,18 @@
 URL [https://api.twitter.com/1.1/followers/list.json?screen_name=ArthurArago1&count=100]
 ----------
 --------------
-Paraibano perdido no Tuiter
-Tibério Cézar
-butico
-denes menezes
-Burgduino
-Dayron Javier
-gio
-july
-Isadora
-complicαdα&perfeitinhαh'
-𝔇𝔬𝔯 𝔫𝔬 𝔰𝔦𝔰𝔬
-laylosa
-🦎
-Vitor Meneses
-minecraft legend
+Paraibano perdido no Tuiter:paodjuenas
+Tibério Cézar:tiiberio
+butico:badgalfifia
+denes menezes:denesmen
+Burgduino:KafesGourmes
+Dayron Javier:DaYrOnLt
+gio:oraporr4
+july:godsavejuly
+Isadora:isadora_lm
+complicαdα&perfeitinhαh':qromozi
+𝔇𝔬𝔯 𝔫𝔬 𝔰𝔦𝔰𝔬:vivicarai
+laylosa:coverdarknss
+🦎:sofiaraujo__
+Vitor Meneses:black_hole_sunn
+minecraft legend:legendminecraft
