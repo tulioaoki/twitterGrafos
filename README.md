@@ -3,10 +3,10 @@ called: yourData.js
 
 inside that file put:
 
-module.exports = {
-    "consumerKey": "XXX",
-    "consumerSecret": "XXX",
-    "accessToken": "XXX",
-    "accessTokenSecret": "XXX",
-    "callBackUrl": "XXX"
+module.exports = {\n
+    "consumerKey": "XXX",\n
+    "consumerSecret": "XXX",\n
+    "accessToken": "XXX",\n
+    "accessTokenSecret": "XXX",\n
+    "callBackUrl": "XXX"\n
 }
