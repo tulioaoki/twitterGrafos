@@ -10,17 +10,21 @@
 
 //Callback functions
 var error = function (err, response, body) {
-    //console.log('ERROR [%s]', err);
-};
-var success = function (data) {
-    //console.log('Data [%s]', data);
+    console.log('err:',err);
 };
 
 
-var Twitter = require('twitter-node-client').Twitter;
 
+const Twitter = require('twitter-node-client').Twitter;
+const fs = require('fs');
 
-const { consumerKey,consumerSecret,accessToken,accessTokenSecret,callBackUrl } = require('./yourData');
+const {
+    consumerKey,
+    consumerSecret,
+    accessToken,
+    accessTokenSecret,
+    callBackUrl
+} = require('./yourData');
 
 var config = {
     consumerKey,
@@ -30,17 +34,58 @@ var config = {
     callBackUrl
 }
 
+
+
+
 var twitter = new Twitter(config);
 
-let params = { screen_name: 'ArthurArago1', count: '100'}
 
-//twitter.getUserTimeline({ screen_name: 'ArthurArago1', count: '10'},error,success);
-twitter.getFollowersList(params, error, (res)=>{
-    console.log('----------');
-    console.log('--------------')
-    data = JSON.parse(res);
-    users = data.users;
-    users.forEach(element => {
-        console.log(element.name+":"+element.screen_name)
+
+//get array of user and return  a simplifed array of user {name,realname,followers,following}
+const userFromRes = async (users) => { 
+    let cleanedUsers = users.map(user => {
+        return{
+            'name':user.name,
+            'screen_name':user.screen_name,
+            'followers':user.followers_count,
+            'following':user.friends_count
+        }
+        
+    })
+    return cleanedUsers;
+}
+
+
+const getFollowing = (screenName,next) => {
+    
+    let params = {
+        screen_name: screenName,
+        count: '10'
+    }
+
+
+    twitter.getCustomApiCall('/friends/list.json',params, error, (res)=>{
+        let response = JSON.parse(res);
+        friends = userFromRes(response.users)
+        
+
+        next(friends);        
+        
     });
-});
+}
+
+
+
+
+//code logic starts here -->
+
+
+
+getFollowing('ArthurArago1',(res) => {
+    console.log(res)
+})
+    
+    
+
+
+

@@ -18,3 +18,18 @@ remember to run:
 ```console
 foo@bar:~$ npm i 
 ```
+
+
+functions:
+
+```javascript
+    getFollowing(screenName,count,next)
+```
+
+function to get the following list of a user
+
+| Parameter     | Description   |  
+| ------------- | ------------- |  
+| screenName | screen name of the twitter user |  
+| count | number of things to return|  
+|next|callback function|  

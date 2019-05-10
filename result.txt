@@ -1,18 +1,42 @@
-URL [https://api.twitter.com/1.1/followers/list.json?screen_name=ArthurArago1&count=100]
-----------
---------------
-Paraibano perdido no Tuiter:paodjuenas
-Tibério Cézar:tiiberio
-butico:badgalfifia
-denes menezes:denesmen
-Burgduino:KafesGourmes
-Dayron Javier:DaYrOnLt
-gio:oraporr4
-july:godsavejuly
-Isadora:isadora_lm
-complicαdα&perfeitinhαh':qromozi
-𝔇𝔬𝔯 𝔫𝔬 𝔰𝔦𝔰𝔬:vivicarai
-laylosa:coverdarknss
-🦎:sofiaraujo__
-Vitor Meneses:black_hole_sunn
-minecraft legend:legendminecraft
+URL [https://api.twitter.com/1.1/friends/list.json?screen_name=ArthurArago1&count=10]
+Promise {
+  [ { name: 'Travis Willingham',
+    screen_name: 'WillingBlam',
+    followers: 273016,
+    following: 235 },
+  { name: 'Laura Bailey',
+    screen_name: 'LauraBaileyVO',
+    followers: 343388,
+    following: 881 },
+  { name: 'denes menezes',
+    screen_name: 'denesmen',
+    followers: 288,
+    following: 231 },
+  { name: 'ESP8266',
+    screen_name: 'ESP8266',
+    followers: 18970,
+    following: 1025 },
+  { name: 'Prince Oshcat',
+    screen_name: 'OshcatPrince',
+    followers: 220,
+    following: 230 },
+  { name: 'AND!XOR',
+    screen_name: 'ANDnXOR',
+    followers: 5917,
+    following: 966 },
+  { name: 'Kerry Scharfglass',
+    screen_name: 'Borgel',
+    followers: 1098,
+    following: 628 },
+  { name: 'Dumb Badge',
+    screen_name: 'MrRobotBadge',
+    followers: 3213,
+    following: 0 },
+  { name: 'Tiago, sem H',
+    screen_name: 'CalmonTiago',
+    followers: 138,
+    following: 342 },
+  { name: 'ESP32',
+    screen_name: 'ESP32net',
+    followers: 13197,
+    following: 717 } ] }
