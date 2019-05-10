@@ -56,11 +56,11 @@ const userFromRes = async (users) => {
 }
 
 
-const getFollowing = (screenName,next) => {
+const getFollowing = (screenName,count,next) => {
     
     let params = {
         screen_name: screenName,
-        count: '10'
+        count
     }
 
 
@@ -81,7 +81,7 @@ const getFollowing = (screenName,next) => {
 
 
 
-getFollowing('ArthurArago1',(res) => {
+getFollowing('ArthurArago1','10',(res) => {
     console.log(res)
 })
     
