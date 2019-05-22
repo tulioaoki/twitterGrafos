@@ -33,3 +33,19 @@ function to get the following list of a user
 | screenName | screen name of the twitter user |  
 | count | number of things to return|  
 |next|callback function|  
+
+
+
+```javascript
+    getTweetsByLoc(q,lat,long,rad)
+```
+
+function to get the following list of a user
+
+| Parameter     | Description   |  
+| ------------- | ------------- |  
+| q | querry of the search |  
+| lat | latitude |  
+|long |longitude|  
+| rad | radius (ex.: 1km) |
+

@@ -77,15 +77,30 @@ const getFollowing = (screenName,count,next) => {
 
 
 
+
+
+
 //code logic starts here -->
 
+getTweetsByLoc('','-8.054635','-34.887299','1km')
 
-
-getFollowing('ArthurArago1','10',(res) => {
-    console.log(res)
-})
+// getFollowing('ArthurArago1','10',(res) => {
+//     console.log(res)
+// })
     
     
 
 
 
+function getTweetsByLoc(q,lat,long,rad){
+    let params = {
+        q: q,
+        geocode: `${lat},${long},${rad}`
+    }
+
+
+    twitter.getCustomApiCall('/search/tweets.json',params,error,(res)=>{
+        let response = JSON.parse(res) 
+        console.log(response);
+    })
+}
