@@ -40,7 +40,7 @@ function to get the following list of a user
     getTweetsByLoc(q,lat,long,rad)
 ```
 
-function to get the following list of a user
+function to get list of tweets by location
 
 | Parameter     | Description   |  
 | ------------- | ------------- |  
