@@ -37,7 +37,7 @@ function to get the following list of a user
 
 
 ```javascript
-    getTweetsByLoc(q,lat,long,rad)
+    getTweetsByLoc(q,geo,next)
 ```
 
 function to get list of tweets by location
@@ -45,7 +45,6 @@ function to get list of tweets by location
 | Parameter     | Description   |  
 | ------------- | ------------- |  
 | q | querry of the search |  
-| lat | latitude |  
-|long |longitude|  
-| rad | radius (ex.: 1km) |
+| geo | geolocation in format: latitude,longitude,radius(ex.:1km) |
+| next | callback function|
 

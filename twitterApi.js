@@ -8,10 +8,7 @@
 // github: https://github.com/BoyCook/TwitterJSClient
 // npm: 
 
-//Callback functions
-var error = function (err, response, body) {
-    console.log('err:',err);
-};
+
 
 
 
@@ -41,8 +38,51 @@ var twitter = new Twitter(config);
 
 
 
+//code logic starts here -->
+
+getTweetsByLoc('','-8.054635,-34.887299,1km',printData)
+
+// getFollowing('ArthurArago1','10',(res) => {
+//     console.log(res)
+// })
+    
+    
+function printData(data){
+    console.log(data);
+}
+
+
+function getTweetsByLoc(q,geo,next){
+    let params = {
+        q: q,
+        geocode: geo
+    }
+
+
+    twitter.getCustomApiCall('/search/tweets.json',params,error,(res)=>{
+        let response = JSON.parse(res) 
+        next(response);
+    })
+
+    
+}
+
+function getFollowing (screenName,count,next) {
+    let params = {
+        screen_name: screenName,
+        count
+    }
+    twitter.getCustomApiCall('/friends/list.json',params, error, (res)=>{
+        let response = JSON.parse(res);
+        friends = userFromRes(response.users)
+
+        next(friends);                
+    });
+}
+
+
 //get array of user and return  a simplifed array of user {name,realname,followers,following}
-const userFromRes = async (users) => { 
+function userFromRes (users){ 
     let cleanedUsers = users.map(user => {
         return{
             'name':user.name,
@@ -56,51 +96,6 @@ const userFromRes = async (users) => {
 }
 
 
-const getFollowing = (screenName,count,next) => {
-    
-    let params = {
-        screen_name: screenName,
-        count
-    }
-
-
-    twitter.getCustomApiCall('/friends/list.json',params, error, (res)=>{
-        let response = JSON.parse(res);
-        friends = userFromRes(response.users)
-        
-
-        next(friends);        
-        
-    });
-}
-
-
-
-
-
-
-
-//code logic starts here -->
-
-getTweetsByLoc('','-8.054635','-34.887299','1km')
-
-// getFollowing('ArthurArago1','10',(res) => {
-//     console.log(res)
-// })
-    
-    
-
-
-
-function getTweetsByLoc(q,lat,long,rad){
-    let params = {
-        q: q,
-        geocode: `${lat},${long},${rad}`
-    }
-
-
-    twitter.getCustomApiCall('/search/tweets.json',params,error,(res)=>{
-        let response = JSON.parse(res) 
-        console.log(response);
-    })
-}
+function error (err, response, body) {
+    console.log('err:',err);
+};
